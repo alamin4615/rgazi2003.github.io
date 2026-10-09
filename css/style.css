@@ -1,1 +1,1003 @@
+/* ==================================================
+   1. UNIVERSAL RESET & BASIC SETTINGS
+   ================================================== */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #ffffff;
+    color: #1e293b;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* ==================================================
+   2. NAVIGATION BAR
+   ================================================== */
+
+nav {
+    background: #0d6efd;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    margin: 15px;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00d9ff;
+}
+
+
+/* ==================================================
+   3. COMMON SECTION SETTINGS
+   ================================================== */
+
+section {
+    padding: 60px 80px;
+}
+
+.section-tag {
+    color: #00d9ff;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   4. HERO SECTION - MAIN INTRODUCTION
+   ================================================== */
+
+#home {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #020617,
+        #061a2f,
+        #00111f
+    );
+    color: white;
+    overflow: hidden;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 60px;
+}
+
+.hero-content {
+    width: 48%;
+    position: relative;
+    z-index: 5;
+}
+
+.hero-small-text {
+    color: #00d9ff;
+    letter-spacing: 5px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    line-height: 1.15;
+    margin-bottom: 15px;
+    overflow-wrap: anywhere;
+}
+
+.hero-content h1 span {
+    color: #00e5ff;
+}
+
+.hero-content h2 {
+    font-size: 28px;
+    color: #b8c7d9;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Primary and secondary buttons */
+
+.hero-buttons .btn1,
+.hero-buttons .btn2 {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-buttons .btn1 {
+    background: #00d9ff;
+    color: #00111f;
+    border: 2px solid #00d9ff;
+}
+
+.hero-buttons .btn2 {
+    background: transparent;
+    color: white;
+    border: 2px solid #00d9ff;
+}
+
+.hero-buttons .btn1:hover {
+    background: white;
+    border-color: white;
+    transform: translateY(-4px);
+}
+
+.hero-buttons .btn2:hover {
+    background: #00d9ff;
+    color: #00111f;
+    transform: translateY(-4px);
+}
+
+
+/* ==================================================
+   5. HERO VISUAL - EARTH AND SPACE ANIMATION
+   ================================================== */
+
+.hero-visual {
+    width: 48%;
+    height: 600px;
+    position: relative;
+    perspective: 1000px;
+}
+
+
+/* ==================================================
+   6. EARTH IMAGE AND ROTATION
+   ================================================== */
+
+.earth {
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 80px;
+
+    background-image: url("../images/earth_image.jpg");
+    background-size: cover;
+    background-position: center;
+
+    box-shadow:
+        0 0 30px #00d9ff,
+        0 0 80px rgba(0, 217, 255, 0.5);
+
+    animation: earthRotate 60s linear infinite;
+    z-index: 1;
+}
+
+@keyframes earthRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==================================================
+   7. EARTH ORBIT LINES
+   ================================================== */
+
+.orbit {
+    position: absolute;
+    border: 2px solid rgba(0, 217, 255, 0.45);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Orbit 1 */
+
+.orbit1 {
+    width: 500px;
+    height: 210px;
+    right: -15px;
+    top: 190px;
+    transform: rotate(-15deg);
+}
+
+/* Orbit 2 */
+
+.orbit2 {
+    width: 520px;
+    height: 230px;
+    right: -25px;
+    top: 180px;
+    transform: rotate(15deg);
+}
+
+/* Orbit 3 */
+
+.orbit3 {
+    width: 540px;
+    height: 250px;
+    right: -35px;
+    top: 170px;
+    transform: rotate(45deg);
+}
+
+/* Orbit 4 */
+
+.orbit4 {
+    width: 560px;
+    height: 270px;
+    right: -45px;
+    top: 160px;
+    transform: rotate(75deg);
+}
+
+/* Orbit 5 */
+
+.orbit5 {
+    width: 580px;
+    height: 290px;
+    right: -55px;
+    top: 150px;
+    transform: rotate(105deg);
+}
+
+/* Orbit 6 */
+
+.orbit6 {
+    width: 600px;
+    height: 310px;
+    right: -65px;
+    top: 140px;
+    transform: rotate(135deg);
+}
+
+
+/* ==================================================
+   8. ROCKET ANIMATION
+   ================================================== */
+
+.rocket {
+    position: absolute;
+    right: 70px;
+    top: 80px;
+    font-size: 75px;
+    z-index: 10;
+    transform: rotate(35deg);
+    animation: rocketFly 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px #ff8c00);
+}
+
+@keyframes rocketFly {
+    0% {
+        transform: translate(0, 0) rotate(35deg);
+    }
+
+    50% {
+        transform: translate(-35px, 35px) rotate(35deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(35deg);
+    }
+}
+
+
+/* ==================================================
+   9. SATELLITE ORBIT ANIMATION
+   ================================================== */
+
+.satellite-orbit {
+    width: 540px;
+    height: 540px;
+    position: absolute;
+    top: 25px;
+    right: -35px;
+    border-radius: 50%;
+    animation: satelliteOrbit 20s linear infinite;
+    z-index: 5;
+}
+
+.satellite {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 45px;
+    transform: translateX(-50%);
+}
+
+@keyframes satelliteOrbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==================================================
+   10. ABOUT SECTION
+   ================================================== */
+
+#about {
+    padding: 80px;
+    background: #ffffff;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 40px;
+    color: #0f172a;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.about-image {
+    width: 40%;
+    text-align: center;
+}
+
+.about-image img {
+    width: 400px;
+    height: 400px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    width: 60%;
+}
+
+.about-text h3 {
+    font-size: 28px;
+    color: #0077b6;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #475569;
+}
+
+
+/* ==================================================
+   11. SKILLS SECTION
+   ================================================== */
+
+#skills {
+    padding: 80px;
+    background: #f5f8fc;
+}
+
+#skills h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #0f172a;
+}
+
+.skills-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.skill-card h3 {
+    margin-bottom: 20px;
+    color: #0077b6;
+    font-size: 21px;
+}
+
+.skill-card p {
+    margin-bottom: 10px;
+    color: #475569;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: #00b4d8;
+}
+
+
+/* ==================================================
+   12. PROJECTS SECTION - MAIN SETTINGS
+   ================================================== */
+
+#projects {
+    padding: 80px;
+    background: #020617;
+    color: white;
+}
+
+.projects-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.projects-heading h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.projects-description {
+    color: #b8c7d9;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: auto;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+
+/* ==================================================
+   13. PROJECT CARDS
+   ================================================== */
+
+.project-card {
+    min-width: 0;
+    background: #0f1d32;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #00d9ff;
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.15);
+}
+
+
+/* ==================================================
+   14. PROJECT MAP IMAGES
+   ================================================== */
+
+.project-image {
+    height: 220px;
+    overflow: hidden;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Optional label if your HTML uses a span */
+
+.project-image span {
+    padding: 10px 15px;
+    border: 1px solid #00d9ff;
+    background: rgba(2, 6, 23, 0.75);
+    color: #00d9ff;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+
+/* ==================================================
+   15. PROJECT CARD CONTENT
+   ================================================== */
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 21px;
+}
+
+.project-content p {
+    color: #b8c7d9;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+
+/* ==================================================
+   16. PROJECT TECHNOLOGY TAGS
+   ================================================== */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tags span {
+    background: rgba(0, 217, 255, 0.1);
+    color: #00d9ff;
+    border: 1px solid rgba(0, 217, 255, 0.25);
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   17. PROJECT IMAGE FALLBACK BACKGROUNDS
+   ================================================== */
+
+.flood {
+    background: linear-gradient(135deg, #075985, #0f172a);
+}
+
+.ev {
+    background: linear-gradient(135deg, #166534, #0f172a);
+}
+
+.lulc {
+    background: linear-gradient(135deg, #854d0e, #0f172a);
+}
+
+
+/* ==================================================
+   18. VIEW MAP BUTTON
+   ================================================== */
+
+.project-link {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 10px 20px;
+    color: #00111f;
+    background: #00d9ff;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #00d9ff;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.project-link:hover {
+    background: white;
+    color: #00111f;
+    border-color: white;
+    transform: translateY(-3px);
+}
+
+
+/* ==================================================
+   19. CONTACT SECTION
+   ================================================== */
+
+#contact {
+    padding: 80px;
+    background: #061a2f;
+    color: white;
+}
+
+.contact-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.contact-heading h2 {
+    font-size: 40px;
+    margin: 15px 0;
+    color: white;
+}
+
+.contact-heading > p:last-child {
+    color: #b8c7d9;
+    line-height: 1.7;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+
+/* ==================================================
+   20. CONTACT CARDS
+   ================================================== */
+
+.contact-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: #0f1d32;
+    border: 1px solid rgba(0, 217, 255, 0.25);
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+    border-color: #00d9ff;
+}
+
+.contact-card span {
+    font-size: 35px;
+}
+
+.contact-card h3 {
+    margin: 15px 0 10px;
+    color: white;
+}
+
+.contact-card p {
+    color: #b8c7d9;
+    overflow-wrap: anywhere;
+}
+
+.contact-card a {
+    color: #00d9ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-card a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+/* ==================================================
+   21. FOOTER SECTION
+   ================================================== */
+
+footer {
+    background: #020617;
+    color: #b8c7d9;
+    text-align: center;
+    padding: 25px 20px;
+    border-top: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+footer p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   22. TABLET RESPONSIVE DESIGN
+   ================================================== */
+
+@media (max-width: 1024px) {
+
+    nav {
+        padding: 15px 25px;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 15px;
+    }
+
+    .hero {
+        padding: 40px;
+        gap: 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 46px;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .hero-visual {
+        transform: scale(0.8);
+        transform-origin: center;
+    }
+
+    #about,
+    #skills,
+    #projects,
+    #contact {
+        padding: 60px 35px;
+    }
+
+    .skills-container,
+    .projects-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-container {
+        gap: 35px;
+    }
+
+    .about-image img {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+
+/* ==================================================
+   23. MOBILE RESPONSIVE DESIGN
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    /* Mobile Navigation */
+
+    nav {
+        flex-direction: column;
+        gap: 18px;
+        margin: 0;
+        padding: 20px 15px;
+        border-radius: 0;
+    }
+
+    .logo {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+
+    /* Mobile Hero */
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+        gap: 10px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content h2 {
+        font-size: 23px;
+    }
+
+    .hero-small-text {
+        letter-spacing: 3px;
+        font-size: 12px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-buttons .btn1,
+    .hero-buttons .btn2 {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+
+    /* Mobile Earth Animation */
+
+    .hero-visual {
+        width: 100%;
+        height: 430px;
+        transform: scale(0.65);
+        transform-origin: top center;
+        margin-bottom: -130px;
+    }
+
+
+    /* Mobile About */
+
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-image,
+    .about-text {
+        width: 100%;
+    }
+
+    .about-image img {
+        width: 300px;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .about-text h3 {
+        font-size: 24px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+
+    /* Mobile Section Headings */
+
+    #about,
+    #skills,
+    #projects,
+    #contact {
+        padding: 50px 20px;
+    }
+
+    #about h2,
+    #skills h2,
+    .projects-heading h2,
+    .contact-heading h2 {
+        font-size: 32px;
+    }
+
+
+    /* Mobile Card Layouts */
+
+    .skills-container,
+    .projects-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 230px;
+    }
+
+    .project-content {
+        padding: 22px;
+    }
+}
+
+
+/* ==================================================
+   24. SMALL MOBILE RESPONSIVE DESIGN
+   ================================================== */
+
+@media (max-width: 400px) {
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-small-text {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+    }
+
+    .hero-buttons .btn1,
+    .hero-buttons .btn2 {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    .project-content h3 {
+        font-size: 19px;
+    }
+
+    .project-tags span {
+        font-size: 11px;
+    }
+}
+
+
+/* ==================================================
+   25. END OF STYLESHEET
+   ================================================== */
